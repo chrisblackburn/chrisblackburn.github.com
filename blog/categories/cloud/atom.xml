@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: cloud | Chris Blackburn]]></title>
+  <link href="http://chrisblackburn.github.com/blog/categories/cloud/atom.xml" rel="self"/>
+  <link href="http://chrisblackburn.github.com/"/>
+  <updated>2012-03-10T12:44:59+00:00</updated>
+  <id>http://chrisblackburn.github.com/</id>
+  <author>
+    <name><![CDATA[Chris Blackburn]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[The "web hosting" industry is fucked]]></title>
+    <link href="http://chrisblackburn.github.com/blog/2012/03/06/the-web-hosting-industry-is-fucked/"/>
+    <updated>2012-03-06T19:25:00+00:00</updated>
+    <id>http://chrisblackburn.github.com/blog/2012/03/06/the-web-hosting-industry-is-fucked</id>
+    <content type="html"><![CDATA[<p>If you're in some kind of infrastructure business that isn't investing, or invested in API-driven infrastructure, you've missed the boat. Capacity planning should be a thing of the past.</p>
+
+<p>Gone are the days where it's even possible to use a media plan to estimate the kind of traffic levels a web application might receive. The network effect (formerly: Slashdotted and The Digg Effect) of connected people who are heavily encouraged and incentivised to share content make it close to impossible to guess when peaks in traffic might arrive and what they might look like.</p>
+
+<p>Over-provisioning infrastructure (or possibly worse, under-provisioning infrastructure) based on the output of a performance test and some traffic estimations does not make for good business. Unless of course your business is selling the CPU cycles, memory and I/O.</p>
+
+<h2>Platforms not Servers</h2>
+
+<p>Application developers shouldn't have to be concerned with either the physical tin or the virtualised machines that may be used to deliver their application. What is needed is a platform that provides the necessary software stack to run the application. The platform should take care of both scale and redundancy by switching instances on and off as required.</p>
+
+<h2>IaaS and PaaS</h2>
+
+<p>Infrastructure as a Service (IaaS) providers have moved the industry on significantly; certainly the providers who have been driving the shift toward API-driven infrastructure. The ability to steer a complicated technology infrastructure via code provides some significant and obvious advantages over employing monkeys to manage machines via a VMWare console - or worse - to rack physical machines on-demand.</p>
+
+<p>That said, IaaS typically has a high barrier to entry, with developers required to run configuration and often write code to take advantage of the really useful benefits - particularly autoscale functionality. Unless you're prepared to invest in your Devops function (and there are cases where it is justifiable), your ability to leverage the value of IaaS will be limited.</p>
+
+<p>Platform as a Service (PaaS) takes the service provision a layer higher, providing a the software stack, and if it's a platform really worth investing in, a suite of supporting tools that provide resource elasticity based on the realtime demands placed on the application.</p>
+
+<h2>Pay as you go infrastructure</h2>
+
+<p>The closest model to perfect in respect to billing for infrastructure comes from <a href="http://code.google.com/appengine/">Google App Engine</a>. An application developer deploys their app on to the <em>platform</em> (rather than some specific servers; virtualised or not), specifies the upper limit of what they're prepared to pay for the service on a daily basis and the platform takes care of the rest.</p>
+
+<p>If the application becomes incredibly popular, the developer will pay their upper limit and users thereafter will be turned away. If it doesn't become popular, the developer pays nothing.</p>
+
+<p>Scalability and redundancy are inherent in the platform's architecture. Beyond the scope of this discussion, there are a host of reasons to bear in mind when launching on App Engine, particularly around vendor lock-in.</p>
+
+<h2>Focus on differentiation</h2>
+
+<p>It's rarely a differentiating activity to run infrastructure. Unless your core business is providing a PaaS, or your technical landscape is by necessity <a href="http://www.netflix.com/">significantly</a> <a href="http://twitter.com/">bespoke</a>: don't bother.</p>
+
+<p>Focus your efforts on providing a more marketable core product and let someone else worry about scaling your infrastructure.</p>
+
+<h2>State of the market</h2>
+
+<p>Amazon is unquestionably the market leader in the IaaS space, pulling in a reported $1bn last year in revenue from AWS. Their shift in to more platform-level services has been increasing, with products from <a href="http://aws.amazon.com/elasticbeanstalk/">Elastic Beanstalk</a> (a turnkey solution for delivering Java apps) to <a href="http://aws.amazon.com/dynamodb/">DynamoDB</a> (an almost infinitely scalable NoSQL database) and <a href="http://aws.amazon.com/elasticache/">Elasticache</a> (a managed memcached cluster).</p>
+
+<p>On the public cloud platform offerings, the most notable are <a href="http://www.heroku.com/">Heroku</a>, which you can combine with <a href="http://www.heroscale.com/">HeroScale</a>, <a href="http://www.windowsazure.com/">Windows Azure</a> (when it's not <a href="http://www.wired.com/wiredenterprise/2012/03/azure-leap-year-bug/">confused by the leap year</a>) and <a href="http://www.engineyard.com/products/cloud/pricing">Engine Yard</a>.</p>
+
+<p>At the enterprise level is where some of the more recent and more interesting movements have occurred. Platforms such as <a href="http://www.activestate.com/stackato">Stackato</a> (built on <a href="http://www.cloudfoundry.com/">CloudFoundry</a>), which last week hit it's 1.0 release, offer steps in the direction of scalable and customisable platforms that can be hosted on either public or private cloud infrastructure.</p>
+
+<h2>tl;dr</h2>
+
+<p>Providers who are still focusing on delivering infrastructure to end users that is based on hardware-like specs aren't providing a relevant service.</p>
+
+<p>Unless your business justifies a significantly bespoke platform, which I would argue that most don't, you should focus less on infrastructure and more on finding a platform provider in which someone whose core business is delivering and innovating the platform worries about the "ilities" (scalability, reliability etc.).</p>
+]]></content>
+  </entry>
+  
+</feed>
