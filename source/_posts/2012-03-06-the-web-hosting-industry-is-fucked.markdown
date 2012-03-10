@@ -1,0 +1,59 @@
+---
+layout: post
+title: "The \"web hosting\" industry is fucked"
+date: 2012-03-06 19:25
+comments: true
+categories: [hosting, cloud, iaas, paas]
+---
+If you're in some kind of infrastructure business that isn't investing, or invested in API-driven infrastructure, you've missed the boat. Capacity planning should be a thing of the past.
+
+Gone are the days where it's even possible to use a media plan to estimate the kind of traffic levels a web application might receive. The network effect (formerly: Slashdotted and The Digg Effect) of connected people who are heavily encouraged and incentivised to share content make it close to impossible to guess when peaks in traffic might arrive and what they might look like.
+
+Over-provisioning infrastructure (or possibly worse, under-provisioning infrastructure) based on the output of a performance test and some traffic estimations does not make for good business. Unless of course your business is selling the CPU cycles, memory and I/O.
+
+
+Platforms not Servers
+---------------------
+Application developers shouldn't have to be concerned with either the physical tin or the virtualised machines that may be used to deliver their application. What is needed is a platform that provides the necessary software stack to run the application. The platform should take care of both scale and redundancy by switching instances on and off as required.
+
+
+IaaS and PaaS
+-------------
+Infrastructure as a Service (IaaS) providers have moved the industry on significantly; certainly the providers who have been driving the shift toward API-driven infrastructure. The ability to steer a complicated technology infrastructure via code provides some significant and obvious advantages over employing monkeys to manage machines via a VMWare console - or worse - to rack physical machines on-demand.
+
+That said, IaaS typically has a high barrier to entry, with developers required to run configuration and often write code to take advantage of the really useful benefits - particularly autoscale functionality. Unless you're prepared to invest in your Devops function (and there are cases where it is justifiable), your ability to leverage the value of IaaS will be limited.
+
+Platform as a Service (PaaS) takes the service provision a layer higher, providing a the software stack, and if it's a platform really worth investing in, a suite of supporting tools that provide resource elasticity based on the realtime demands placed on the application.
+
+
+Pay as you go infrastructure
+----------------------------
+The closest model to perfect in respect to billing for infrastructure comes from [Google App Engine](http://code.google.com/appengine/). An application developer deploys their app on to the *platform* (rather than some specific servers; virtualised or not), specifies the upper limit of what they're prepared to pay for the service on a daily basis and the platform takes care of the rest.
+
+If the application becomes incredibly popular, the developer will pay their upper limit and users thereafter will be turned away. If it doesn't become popular, the developer pays nothing.
+
+Scalability and redundancy are inherent in the platform's architecture. Beyond the scope of this discussion, there are a host of reasons to bear in mind when launching on App Engine, particularly around vendor lock-in.
+
+
+Focus on differentiation
+------------------------
+It's rarely a differentiating activity to run infrastructure. Unless your core business is providing a PaaS, or your technical landscape is by necessity [significantly](http://www.netflix.com/) [bespoke](http://twitter.com/): don't bother.
+
+Focus your efforts on providing a more marketable core product and let someone else worry about scaling your infrastructure.
+
+
+State of the market
+-------------------
+Amazon is unquestionably the market leader in the IaaS space, pulling in a reported $1bn last year in revenue from AWS. Their shift in to more platform-level services has been increasing, with products from [Elastic Beanstalk](http://aws.amazon.com/elasticbeanstalk/) (a turnkey solution for delivering Java apps) to [DynamoDB](http://aws.amazon.com/dynamodb/) (an almost infinitely scalable NoSQL database) and [Elasticache](http://aws.amazon.com/elasticache/) (a managed memcached cluster).
+
+On the public cloud platform offerings, the most notable are [Heroku](http://www.heroku.com/), which you can combine with [HeroScale](http://www.heroscale.com/), [Windows Azure](http://www.windowsazure.com/) (when it's not [confused by the leap year](http://www.wired.com/wiredenterprise/2012/03/azure-leap-year-bug/)) and [Engine Yard](http://www.engineyard.com/products/cloud/pricing).
+
+At the enterprise level is where some of the more recent and more interesting movements have occurred. Platforms such as [Stackato](http://www.activestate.com/stackato) (built on [CloudFoundry](http://www.cloudfoundry.com/)), which last week hit it's 1.0 release, offer steps in the direction of scalable and customisable platforms that can be hosted on either public or private cloud infrastructure.
+
+
+tl;dr
+-----
+Providers who are still focusing on delivering infrastructure to end users that is based on hardware-like specs aren't providing a relevant service.
+
+Unless your business justifies a significantly bespoke platform, which I would argue that most don't, you should focus less on infrastructure and more on finding a platform provider in which someone whose core business is delivering and innovating the platform worries about the "ilities" (scalability, reliability etc.).
+
